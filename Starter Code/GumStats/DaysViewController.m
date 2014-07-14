@@ -60,7 +60,7 @@
 {
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"ShowGraph"])
@@ -70,6 +70,14 @@
 		Record *record = _records[indexPath.row];
 		controller.record = record;
 	}
+}
+*/
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Record *record = _records[indexPath.row];
+    self.graphViewController.record = record;
 }
 
 #pragma mark - UITableViewDataSource

@@ -23,6 +23,7 @@
 		7B80AFB8159B9FBA002101EC /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B80AFB4159B9FBA002101EC /* GraphViewController.m */; };
 		7B80AFB9159B9FBA002101EC /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B80AFB6159B9FBA002101EC /* Record.m */; };
 		7B80AFBC159BA13E002101EC /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B80AFBB159BA13E002101EC /* EditViewController.m */; };
+		C2A116A21973D0FE002CF013 /* CombinedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A116A11973D0FE002CF013 /* CombinedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		7B80AFB6159B9FBA002101EC /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		7B80AFBA159BA13D002101EC /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		7B80AFBB159BA13E002101EC /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		C2A116A01973D0FE002CF013 /* CombinedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinedViewController.h; sourceTree = "<group>"; };
+		C2A116A11973D0FE002CF013 /* CombinedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				7B80AFA3159B9E64002101EC /* MainStoryboard.storyboard */,
+				C2A116A01973D0FE002CF013 /* CombinedViewController.h */,
+				C2A116A11973D0FE002CF013 /* CombinedViewController.m */,
 				7B80AFA0159B9E64002101EC /* AppDelegate.h */,
 				7B80AFA1159B9E64002101EC /* AppDelegate.m */,
 				7B80AFA6159B9E64002101EC /* DaysViewController.h */,
@@ -211,6 +216,7 @@
 				7B80AFA2159B9E64002101EC /* AppDelegate.m in Sources */,
 				7B80AFA8159B9E64002101EC /* DaysViewController.m in Sources */,
 				7B80AFAB159B9E64002101EC /* MeasurementsViewController.m in Sources */,
+				C2A116A21973D0FE002CF013 /* CombinedViewController.m in Sources */,
 				7B80AFB7159B9FBA002101EC /* GraphView.m in Sources */,
 				7B80AFB8159B9FBA002101EC /* GraphViewController.m in Sources */,
 				7B80AFB9159B9FBA002101EC /* Record.m in Sources */,
@@ -291,6 +297,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GumStats/GumStats-Prefix.pch";
 				INFOPLIST_FILE = "GumStats/GumStats-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WARNING_CFLAGS = (
@@ -308,6 +315,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GumStats/GumStats-Prefix.pch";
 				INFOPLIST_FILE = "GumStats/GumStats-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WARNING_CFLAGS = (

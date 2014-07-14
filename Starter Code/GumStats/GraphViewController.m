@@ -48,6 +48,15 @@
 	}
 }
 
+// 重画graph
+- (void)setRecord:(Record *)newRecord
+{
+    if (_record != newRecord) {
+        _record = newRecord;
+        [self redrawGraph];
+    }
+}
+
 - (void)redrawGraph
 {
 	self.graphView.values = self.record.values;

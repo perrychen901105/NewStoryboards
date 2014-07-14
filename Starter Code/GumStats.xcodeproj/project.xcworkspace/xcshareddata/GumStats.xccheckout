@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F7571850-5E3B-4589-9D19-05A482CE0B04</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GumStats</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6F013969-D7DE-4D8E-9E3B-A7AC5775681E</key>
+		<string>https://github.com/perrychen901105/NewStoryboards</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Starter Code/GumStats.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6F013969-D7DE-4D8E-9E3B-A7AC5775681E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/perrychen901105/NewStoryboards</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6F013969-D7DE-4D8E-9E3B-A7AC5775681E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F013969-D7DE-4D8E-9E3B-A7AC5775681E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NewStoryboards</string>
+		</dict>
+	</array>
+</dict>
+</plist>
