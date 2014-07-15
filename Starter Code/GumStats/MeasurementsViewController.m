@@ -3,7 +3,7 @@
 #import "EditViewController.h"
 #import "Record.h"
 
-@interface MeasurementsViewController () <EditViewControllerDelegate>
+@interface MeasurementsViewController ()
 
 @end
 
@@ -24,8 +24,27 @@
 		NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
 		NSNumber *number = self.record.values[indexPath.row];
 		controller.value = [number intValue];
-		controller.delegate = self;
 	}
+}
+
+- (IBAction)cancel:(UIStoryboardSegue *)segue
+{
+    
+}
+
+- (IBAction)deleteValue:(UIStoryboardSegue *)segue
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [self.record deleteValueAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (IBAction)done:(UIStoryboardSegue *)segue
+{
+    EditViewController *controller = segue.sourceViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [self.record replaceValue:controller.value atIndex:indexPath.row];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource

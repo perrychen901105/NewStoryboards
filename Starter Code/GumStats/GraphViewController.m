@@ -39,14 +39,14 @@
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([segue.identifier isEqualToString:@"ShowRecord"])
-	{
-		MeasurementsViewController *controller = segue.destinationViewController;
-		controller.record = self.record;
-	}
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//	if ([segue.identifier isEqualToString:@"ShowRecord"])
+//	{
+//		MeasurementsViewController *controller = segue.destinationViewController;
+//		controller.record = self.record;
+//	}
+//}
 
 // 重画graph
 - (void)setRecord:(Record *)newRecord

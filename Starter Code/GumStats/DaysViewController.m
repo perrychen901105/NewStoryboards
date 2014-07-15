@@ -1,51 +1,14 @@
 
 #import "DaysViewController.h"
 #import "GraphViewController.h"
+#import "MeasurementsViewController.h"
 #import "Record.h"
 
 @implementation DaysViewController
 {
-	NSArray *_records;
+//	NSArray *_records;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-	if ((self = [super initWithCoder:aDecoder]))
-	{
-		// Fill up the array with Record objects, and sort by date.
-		_records =
-			[@[
-				[self makeFakeRecord],
-				[self makeFakeRecord],
-				[self makeFakeRecord],
-				[self makeFakeRecord],
-				[self makeFakeRecord],
-			]
-			sortedArrayUsingComparator:^NSComparisonResult(Record *record1, Record *record2)
-			{
-				return [record1.date compare:record2.date];
-			}];
-	}
-	return self;
-}
-
-- (Record *)makeFakeRecord
-{
-	// A Record contains a date and up to 24 NSNumber objects (one for each
-	// hour in the day). We first calculate a random fake date in the past,
-	// and then create NSNumber objects with random values between 0 and 100.
-
-	NSTimeInterval timeInterval = (int)arc4random_uniform(10000000) * -1;
-	NSDate *date = [NSDate dateWithTimeIntervalSinceNow:timeInterval];
-
-	NSMutableArray *values = [NSMutableArray array];
-	for (int t = 0; t < 24; ++t)
-	{
-		[values addObject:@(arc4random_uniform(100))];
-	}
-
-	return [[Record alloc] initWithDate:date values:values];
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -60,23 +23,35 @@
 {
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	if ([segue.identifier isEqualToString:@"ShowGraph"])
-	{
-		NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-		GraphViewController *controller = segue.destinationViewController;
-		Record *record = _records[indexPath.row];
-		controller.record = record;
-	}
+//	if ([segue.identifier isEqualToString:@"ShowGraph"])
+//	{
+//		NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//		GraphViewController *controller = segue.destinationViewController;
+//		Record *record = _records[indexPath.row];
+//		controller.record = record;
+//	}
+    if ([segue.identifier isEqualToString:@"ShowRecord"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        MeasurementsViewController *controller = segue.destinationViewController;
+        
+        Record *record = _records[indexPath.row];
+        controller.record = record;
+        
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:[record dateForDisplay]
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:nil action:nil];
+        self.parentViewController.navigationItem.backBarButtonItem = backButton;
+    }
 }
-*/
+
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Record *record = _records[indexPath.row];
+    Record *record = self.records[indexPath.row];
     self.graphViewController.record = record;
 }
 
@@ -84,14 +59,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [_records count];
+	return [self.records count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-	Record *record = _records[indexPath.row];
+	Record *record = self.records[indexPath.row];
 	cell.textLabel.text = [record dateForDisplay];
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"Total: %d", record.total];
 

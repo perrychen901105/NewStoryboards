@@ -24,6 +24,9 @@
 		7B80AFB9159B9FBA002101EC /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B80AFB6159B9FBA002101EC /* Record.m */; };
 		7B80AFBC159BA13E002101EC /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B80AFBB159BA13E002101EC /* EditViewController.m */; };
 		C2A116A21973D0FE002CF013 /* CombinedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A116A11973D0FE002CF013 /* CombinedViewController.m */; };
+		C2C8DD4C1975148F00F5BD4D /* MyCustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C8DD4B1975148F00F5BD4D /* MyCustomSegue.m */; };
+		C2C8DD4F1975194000F5BD4D /* MyUnwindSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C8DD4E1975194000F5BD4D /* MyUnwindSegue.m */; };
+		C2C8DD5219751A3C00F5BD4D /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C8DD5119751A3C00F5BD4D /* MyNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,12 @@
 		7B80AFBB159BA13E002101EC /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		C2A116A01973D0FE002CF013 /* CombinedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinedViewController.h; sourceTree = "<group>"; };
 		C2A116A11973D0FE002CF013 /* CombinedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinedViewController.m; sourceTree = "<group>"; };
+		C2C8DD4A1975148F00F5BD4D /* MyCustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomSegue.h; sourceTree = "<group>"; };
+		C2C8DD4B1975148F00F5BD4D /* MyCustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomSegue.m; sourceTree = "<group>"; };
+		C2C8DD4D1975194000F5BD4D /* MyUnwindSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUnwindSegue.h; sourceTree = "<group>"; };
+		C2C8DD4E1975194000F5BD4D /* MyUnwindSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUnwindSegue.m; sourceTree = "<group>"; };
+		C2C8DD5019751A3C00F5BD4D /* MyNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyNavigationViewController.h; path = ../MyNavigationViewController.h; sourceTree = "<group>"; };
+		C2C8DD5119751A3C00F5BD4D /* MyNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyNavigationViewController.m; path = ../MyNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				7B80AFA3159B9E64002101EC /* MainStoryboard.storyboard */,
+				C2C8DD5019751A3C00F5BD4D /* MyNavigationViewController.h */,
+				C2C8DD5119751A3C00F5BD4D /* MyNavigationViewController.m */,
 				C2A116A01973D0FE002CF013 /* CombinedViewController.h */,
 				C2A116A11973D0FE002CF013 /* CombinedViewController.m */,
 				7B80AFA0159B9E64002101EC /* AppDelegate.h */,
@@ -131,6 +142,10 @@
 				7B80AFB5159B9FBA002101EC /* Record.h */,
 				7B80AFB6159B9FBA002101EC /* Record.m */,
 				7B80AF98159B9E64002101EC /* Supporting Files */,
+				C2C8DD4A1975148F00F5BD4D /* MyCustomSegue.h */,
+				C2C8DD4B1975148F00F5BD4D /* MyCustomSegue.m */,
+				C2C8DD4D1975194000F5BD4D /* MyUnwindSegue.h */,
+				C2C8DD4E1975194000F5BD4D /* MyUnwindSegue.m */,
 			);
 			path = GumStats;
 			sourceTree = "<group>";
@@ -212,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C8DD4F1975194000F5BD4D /* MyUnwindSegue.m in Sources */,
 				7B80AF9E159B9E64002101EC /* main.m in Sources */,
 				7B80AFA2159B9E64002101EC /* AppDelegate.m in Sources */,
 				7B80AFA8159B9E64002101EC /* DaysViewController.m in Sources */,
@@ -219,7 +235,9 @@
 				C2A116A21973D0FE002CF013 /* CombinedViewController.m in Sources */,
 				7B80AFB7159B9FBA002101EC /* GraphView.m in Sources */,
 				7B80AFB8159B9FBA002101EC /* GraphViewController.m in Sources */,
+				C2C8DD5219751A3C00F5BD4D /* MyNavigationViewController.m in Sources */,
 				7B80AFB9159B9FBA002101EC /* Record.m in Sources */,
+				C2C8DD4C1975148F00F5BD4D /* MyCustomSegue.m in Sources */,
 				7B80AFBC159BA13E002101EC /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

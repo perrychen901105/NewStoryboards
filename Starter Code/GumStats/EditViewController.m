@@ -1,8 +1,9 @@
 
 #import "EditViewController.h"
 
-@interface EditViewController ()
+@interface EditViewController ()<UIActionSheetDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @end
 
 @implementation EditViewController
@@ -12,7 +13,15 @@
 	[super viewDidLoad];
 
 	self.textField.text = [NSString stringWithFormat:@"%d", self.value];
-	[self.textField becomeFirstResponder];
+//	[self.textField becomeFirstResponder];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.presentingViewController != nil) {
+        [self.textField becomeFirstResponder];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -20,15 +29,50 @@
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)cancel:(id)sender
-{
-	[self.delegate editViewControllerDidCancel:self];
+- (IBAction)delete:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Really delete?"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:@"Delete"
+                                                    otherButtonTitles: nil];
+    [actionSheet showFromRect:self.deleteButton.frame inView:self.view animated:YES];
 }
 
-- (IBAction)done:(id)sender
+#pragma mark - UIActionsheet methods
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	int newValue = [self.textField.text intValue];
-	[self.delegate editViewController:self didChangeValue:newValue];
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        [self performSegueWithIdentifier:@"DeleteValue" sender:nil];
+    }
+}
+
+//
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"DoneEdit"]) {
+        if ([self.textField.text length] > 0) {
+            int value = [self.textField.text intValue];
+            if (value >= 0 && value <= 100) {
+                return YES;
+            }
+            [[[UIAlertView alloc] initWithTitle:nil
+                                       message:@"Value must be between 0 and 100"
+                                      delegate:nil cancelButtonTitle:@"OK"
+                              otherButtonTitles: nil] show];
+            return NO;
+        }
+        return YES;
+    }
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"DoneEdit"]) {
+        self.value = [self.textField.text intValue];
+    } else if ([segue.identifier isEqualToString:@"CancelEdit"]) {
+        NSLog(@"b");
+    }
 }
 
 @end
